@@ -15,9 +15,12 @@ var app = new Vue({
             this.array_items.splice(item, 1);
             console.log(this.array_items);
         },
+        /*creiamo la funzione enter, dve ci passiamo il parametro "keyinput dall'html viene confrontato con il numero 13(valore di invio nella tastiera), se si viene chimata la funzione aggiungi item "*/
+        enter: function(key_input) {
+            if (key_input.keyCode === 13) {
+            console.log('entrato');
+            this.add_item();
+            }
+        },
     },
-    /*'l'oggetto' created: ci permette di eseguire al suo interno pozioni di codice in maniera automatica*/
-    created: function() {
-	},
-
 })

@@ -10,26 +10,10 @@
     <body>
 
         <div id="root">
-            <input v-model="item" type="text" name="" value="">
+            <!-- aggiungere v-on:keyup al imput ci permette di chimare una funzione alla pressione di un tasto sulla tastiera -->
+            <input v-on:keyup="enter" v-model="item" type="text" name="" value="">
             <button @click="add_item" type="button" name="button">Invio</button>
             <p v-for="(item, indice) in array_items" @click="remove_item(indice)">{{item}}</p>
-            <!-- <div class="cont">
-                <div class="prev">
-                    <i @click="prev_f" class="fas fa-angle-left fa-3x"></i>
-                </div>
-                <div class="slide">
-                    <img :src="immagini[index]" :alt="testo">
-                </div>
-                <div class="next">
-                    <i @click="next_f" class="fas fa-angle-right fa-3x"></i>
-                </div>
-                <div class="pallini">
-                    <span v-for="(pallino, indice) in immagini"
-                    v-bind:class="indice == index ? 'active' : null"
-                    @click="set_img(indice)"></span>
-                     al click passiamo il valore indice dello span corrente attraverso la funzione
-                </div>
-            </div> -->
         </div>
 
         <script src="main.js" charset="utf-8"></script>
